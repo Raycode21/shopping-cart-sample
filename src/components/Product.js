@@ -1,19 +1,17 @@
 import React, { Fragment } from 'react';
 
-const Product = (props) => {
-	const { bakedProduct } = props;
-
-	return
-		(
+const Product = ({item}) => {
+	
+	return(
 		  <Fragment>	
 			<div className="img">
-				<img src={bakedProduct.image}
-				 alt={bakedProduct.name}/>
+				<img src={item.image}
+				 alt={item.name}/>
 			</div>
 			<div className="content">
-				<h3>{ bakedProduct.name } </h3>
+				<h3>{ item.name } </h3>
 				<div className="price">
-					{bakedProduct.price}
+					{item.price}
 				</div>
 				<div>
 					<button className="btn">Add to cart</button>

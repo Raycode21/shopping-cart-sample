@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import JSON from './db.json';
+
+
 import Header from './components/Header';
 import Products from './components/Products';
-import data from './bakedProducts';
 
 
-function App() {
-  const {bakedProducts} = data;
+class App extends Component  {
+
+
+  state = {
+    bakedProducts:JSON 
+  }
+
+  render(){
   return (
     <div className="App">
       <Header />
-      <Products bakedProducts ={bakedProducts}/>
+      <Products bakedProducts ={this.state.bakedProducts}/>
     </div>
   );
+}
+
 }
 
 

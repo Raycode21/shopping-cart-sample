@@ -2,8 +2,14 @@ import React, { Fragment } from 'react';
 import  Product  from './Product';
 
 const Products =(props) => {
-  const {bakedProducts} = props;
-  return (
+  const items = props.bakedProducts.map((item) => {
+
+    return (
+      <Product key={item.id} item={item}/>
+      )
+  });
+
+  return(
     <Fragment>
 
     <section className="products" id="products">
@@ -13,20 +19,21 @@ const Products =(props) => {
           </span>  
         </h1>
         <div className="box-container">
-            {bakedProducts?.map((bakedProduct) =>(
               <div className="box">
-                 <div key={bakedProduct.id}>{bakedProduct.name}</div>
+                 { items }
+              </div>       
+            
+            
+          </div>   
+        
 
-            
-            
-          </div> 
-              
-              ))}
-          
-        </div>
     </section>
     </Fragment>    
   );
+
+
+    
+  
 }
 
 
