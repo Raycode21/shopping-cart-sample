@@ -10,7 +10,9 @@ const Products =(props) => {
   });
 
   return(
-    <Fragment>
+  <Fragment>
+  <div className="space">
+  </div>
 
     <section className="products" id="products">
         <h1 className="heading">Our
@@ -18,21 +20,21 @@ const Products =(props) => {
             Menu
           </span>  
         </h1>
-        <div className="box-container">
-              <div className="box">
+    
+        <div>
+              
                  { items }
-              </div>       
+                     
             
             
           </div>   
         
-
-    </section>
-    </Fragment>    
-  );
-
-
+      </section>
+    </Fragment>  
     
+
+
+    )
   
 }
 

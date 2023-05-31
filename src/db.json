@@ -31,7 +31,7 @@
 {	"id": 4,
 	"name": "chocolate slice",
 	"price": 400,
-	"image": "chocolateslice-min.jpg",
+	"image": "/assets/images/chocolateslice.jpg",
 	"tags": "Chocolate cake | chocolate fudge | with frosting"
 	
 		

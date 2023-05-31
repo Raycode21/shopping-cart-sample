@@ -612,7 +612,7 @@ section{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .category .box-container .box{
@@ -670,9 +670,10 @@ section{
 }
 .products .box-container{
  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns:  repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
   padding: 4rem 0;
+  justify-items: center;
   }
 
 .products .box-container .box{
@@ -711,6 +712,7 @@ section{
   background: var(--lightpink);
   color: #fff;
 }
+
 .products .box-container .box .img{
   height: 15rem;
   overflow: hidden;

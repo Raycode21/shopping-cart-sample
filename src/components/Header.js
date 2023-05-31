@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
     <div className="header">
 
        
-		<a htmlFor="/#" className="logo"> <i className="fa-solid fa-cake-candles"></i>Maries bakery</a>
+		<a htmlFor="/" className="logo"> <i className="fa-solid fa-cake-candles"></i>Maries bakery</a>
 
 		<nav className="navbar">
 			<a htmlFor="/index.html">Home</a>
