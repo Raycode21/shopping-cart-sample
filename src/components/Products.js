@@ -36,7 +36,9 @@ const Products =(props) => {
 
     )
   
-}
+};
 
 
-export default Products;
+
+
+export default  Products;
