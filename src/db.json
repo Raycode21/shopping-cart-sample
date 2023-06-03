@@ -1,4 +1,5 @@
- [
+{
+ "bakedProducts":[
 
 {	"id": 1,
 	"name": "cupcake",
@@ -44,4 +45,4 @@
 
 ]
 
-
+}

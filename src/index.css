@@ -670,7 +670,7 @@ section{
 }
 .products .box-container{
  display: grid;
-  grid-template-columns:  repeat(auto-fit, minmax(16rem, 1fr));
+ grid-column: 2;
   gap: 1.5rem;
   padding: 4rem 0;
   justify-items: center;
@@ -678,6 +678,7 @@ section{
 
 .products .box-container .box{
   text-align: center;
+  grid-template-columns:  repeat(auto-fit, minmax(16rem, 1fr));
   padding: 3rem 2rem;
   background: #fff;
   outline: var(--outline);

@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 
-const bakedProducts = require("./bakedProducts.js")
+const bakedProducts = require("./bakedProducts")
 
 const app = express()
 
