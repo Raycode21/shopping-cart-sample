@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 
 import { configureStore } from "@reduxjs/toolkit";
@@ -33,11 +32,9 @@ store.dispatch(productsFetch());
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <Router>
   <Provider store={store}>
     <App />
    </Provider>
-   </Router> 
   </React.StrictMode>
 );
 

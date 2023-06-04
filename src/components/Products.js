@@ -45,7 +45,7 @@ const Products = () => {
                     <div className="content">
                       <h3>{ bakedProduct.name } </h3>
                       <div className="price">
-                      ${bakedProduct.price}
+                      Ksh.{bakedProduct.price}
                       </div>
 
                     </div>
