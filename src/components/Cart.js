@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -19,14 +20,14 @@ const Cart = () => {
     dispatch(getTotals());
   }, [cart, dispatch]);
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+  const handleAddToCart = (bakedProduct) => {
+    dispatch(addToCart(bakedProduct));
   };
-  const handleDecreaseCart = (product) => {
-    dispatch(decreaseCart(product));
+  const handleDecreaseCart = (bakedProduct) => {
+    dispatch(decreaseCart(bakedProduct));
   };
-  const handleRemoveFromCart = (product) => {
-    dispatch(removeFromCart(product));
+  const handleRemoveFromCart = (bakedProduct) => {
+    dispatch(removeFromCart(bakedProduct));
   };
   const handleClearCart = () => {
     dispatch(clearCart());
@@ -65,7 +66,7 @@ const Cart = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="cart-product-price">${cartItem.price}</div>
+                  <div className="cart-product-price">Ksh.{cartItem.price}</div>
                   <div className="cart-product-quantity">
                     <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
@@ -74,7 +75,7 @@ const Cart = () => {
                     <button onClick={() => handleAddToCart(cartItem)}>+</button>
                   </div>
                   <div className="cart-product-total-price">
-                    ${cartItem.price * cartItem.cartQuantity}
+                    Ksh.{cartItem.price * cartItem.cartQuantity}
                   </div>
                 </div>
               ))}
@@ -86,7 +87,7 @@ const Cart = () => {
             <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal</span>
-                <span className="amount">${cart.cartTotalAmount}</span>
+                <span className="amount">Ksh.{cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
               <button>Check out</button>

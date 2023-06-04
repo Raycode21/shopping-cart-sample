@@ -31,7 +31,9 @@ const cartSlice = createSlice({
 		 	 }
 
 		 	 localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-		 	  decreaseCart(state, action) {
+	},
+
+	decreaseCart(state, action) {
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
@@ -56,7 +58,8 @@ const cartSlice = createSlice({
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
-    removeFromCart(state, action) {
+
+	  removeFromCart(state, action) {
       state.cartItems.map((cartItem) => {
         if (cartItem.id === action.payload.id) {
           const nextCartItems = state.cartItems.filter(
@@ -98,11 +101,9 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       toast.error("Cart cleared", { position: "bottom-left" });
     },
-  },
-	},
-
+},
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, decreaseCart, getTotals, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
