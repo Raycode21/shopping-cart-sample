@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,9 +20,11 @@ const Header = () => {
 		<div className="icons">
 			<div id="menu-btn" className="fas fa-bars"></div>
 			<div id="search-btn" className="fas fa-search"></div>
+			<Link to="/Cart">
 			<div id="cart-btn" className="fas fa-shopping-cart">
 				<span >0</span>
 			</div>
+			</Link>
 
 			<div id="login-btn" className="fas fa-user"></div>
 

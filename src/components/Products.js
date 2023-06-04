@@ -13,7 +13,7 @@ const Products = () => {
 
   const handleAddToCart = (bakedProduct) => {
     dispatch(addToCart(bakedProduct));
-    navigate("/cart");
+    navigate("/Cart");
   };
 
   return ( 
