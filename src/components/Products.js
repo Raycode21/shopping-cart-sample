@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
 
 const Products = () => {
-  const { items: bakedProducts, status } = useSelector((state) => state.bakedProducts);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,10 +13,10 @@ const Products = () => {
 
   const handleAddToCart = (bakedProduct) => {
     dispatch(addToCart(bakedProduct));
-    navigate.push("/cart");
+    navigate("/cart");
   };
 
-  return (
+  return ( 
     <>
     <div className="space">
       </div>
@@ -29,12 +28,13 @@ const Products = () => {
             </span>  
           </h1>
     
+          <div className="box-container">
 
-      <div className="box-container">
-        {status === "success" ? (
+        
           <>
-            <h2>New Arrivals</h2>
-            <div className="box">
+
+            <h2>Current Flavors & designs</h2>
+            <div> 
               {data &&
                 data?.map((bakedProduct) => (
                   <div key={bakedProduct.id} className="box">
@@ -49,18 +49,14 @@ const Products = () => {
                       </div>
 
                     </div>
-                    <button onClick={() => handleAddToCart(bakedProduct)}>
+                    <button className="btn" onClick={() => handleAddToCart(bakedProduct)}>
                       Add To Cart
                     </button>
                   </div>
                 ))}
             </div>
           </>
-        ) : status === "pending" ? (
-          <p>Loading...</p>
-        ) : (
-          <p>Unexpected error occured...</p>
-        )}
+        
       </div>
     </section>
     </>  
