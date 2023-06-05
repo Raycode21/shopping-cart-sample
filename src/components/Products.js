@@ -28,14 +28,11 @@ const Products = () => {
             </span>  
           </h1>
     
-          <div className="box-container">
-
         
           <>
 
             <h2>Current Flavors & designs</h2>
-            <div> 
-              {data &&
+              <div className="box-container">              {data &&
                 data?.map((bakedProduct) => (
                   <div key={bakedProduct.id} className="box">
                     <div className="img">
@@ -55,9 +52,10 @@ const Products = () => {
                   </div>
                 ))}
             </div>
+         
           </>
         
-      </div>
+      
     </section>
     </>  
   );

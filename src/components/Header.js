@@ -10,11 +10,11 @@ const Header = () => {
 		<a htmlFor="/" className="logo"> <i className="fa-solid fa-cake-candles"></i>Maries bakery</a>
 
 		<nav className="navbar">
-			<a htmlFor="/index.html">Home</a>
+			<a htmlFor="/Home">Home</a>
 			<a htmlFor="/index.html#about">About</a>
 			<a htmlFor="/blogs">Blogs</a>
 			<a htmlFor="/index.html#contact">Contact</a>
-			<a htmlFor="/index.html#products">Menu</a>
+			<a htmlFor="./products">Menu</a>
 		</nav>
 
 		<div className="icons">
