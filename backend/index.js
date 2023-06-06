@@ -3,6 +3,7 @@ const cors = require("cors");
 
 
 const mongoose = require("mongoose");
+const register = require('./route/register')
 require("dotenv").config({ path:'./.env' });
 
 const app = express();
@@ -10,6 +11,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.use("/api/register", register)
 
 
 app.get("/", (req, res) => {
