@@ -1,7 +1,11 @@
 import React, { Fragment } from 'react';
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+
 
 const Header = () => {
+	const { cartTotalQuantity } = useSelector((state) => state.cart);
   return (
   	<Fragment>
  
@@ -22,7 +26,7 @@ const Header = () => {
 			<div id="search-btn" className="fas fa-search"></div>
 			<Link to="/Cart">
 			<div id="cart-btn" className="fas fa-shopping-cart">
-				<span >0</span>
+				<span className="bag-quantity">{cartTotalQuantity}</span>
 			</div>
 			</Link>
 

@@ -94,7 +94,7 @@ const Cart = () => {
               <div className="continue-shopping">
                 <Link to="/">
                   
-                  <span>Continue Shopping</span>
+                  <span><i class="fa-solid fa-circle-arrow-left"></i>Continue Shopping</span>
                 </Link>
               </div>
             </div>
