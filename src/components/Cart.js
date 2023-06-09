@@ -33,7 +33,9 @@ const Cart = () => {
     dispatch(clearCart());
   };
   return (
+
     <div className="cart-container">
+    <div className="space"></div>
       <h2>Shopping Cart</h2>
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">

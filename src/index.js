@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-
 
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from 'react-redux';
@@ -12,6 +10,7 @@ import { Provider } from 'react-redux';
 import productsReducer, { productsFetch } from "./features/productsSlice";
 import { productsApi } from "./features/productsApi";
 import cartReducer from "./features/cartSlice";
+import authReducer from "./features/authSlice";
 
 
 const store = configureStore({
@@ -19,6 +18,7 @@ const store = configureStore({
     products: productsReducer,
     cart: cartReducer,
     [productsApi.reducerPath]: productsApi.reducer,
+    auth: authReducer
   },
   middleware: (getDefaultMiddleware) => 
     getDefaultMiddleware().concat(productsApi.middleware),

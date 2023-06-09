@@ -1,17 +1,29 @@
 import React, { Fragment } from 'react';
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
+import { toast } from "react-toastify";
+import { logoutUser } from "../features/authSlice";
 
 
 const Header = () => {
 	const { cartTotalQuantity } = useSelector((state) => state.cart);
+	const auth = useSelector((state) => state.auth);
+	const dispatch = useDispatch();
+
+	console.log(auth);
+
+
   return (
   	<Fragment>
  
     <div className="header">
 
-		<a htmlFor="/" className="logo"> <i className="fa-solid fa-cake-candles"></i>Maries bakery</a>
+		<Link to="/">
+		<a htmlFor="/" className="logo"> 
+		<i className="fa-solid fa-cake-candles"></i>Maries bakery
+		</a>
+		</Link>
 
 		<nav className="navbar">
 			<a htmlFor="/Home">Home</a>
@@ -30,7 +42,7 @@ const Header = () => {
 			</div>
 			</Link>
 
-			<div id="login-btn" className="fas fa-user"></div>
+			<Link to="/Login"><div id="login-btn" className="fas fa-user"></div></Link>
 
 
 
@@ -40,43 +52,56 @@ const Header = () => {
 			<input type="search" id="search-box" placeholder="search here"/>
 			<label for="search-box" className="fas fa-search"></label>
 		</form>
-		
-		<div className="shopping-cart" id="shopping-cart">
-			<div className="box">
-
-
-
-
-
-				</div>
-			</div>	
-
-
-
-
-
-		<form action="" className="login-form">
-			<h3>login here</h3>
-			<input type="email" placeholder="enter email" className="box"/>
-			<input type="password" placeholder="enter password" className="box"/>
-			<p>forgot password?<a htmlFor="#">click here</a></p>
-
-			<input type="submit" value="log in now" className="btn"/>
-			<p>Don't have an account?<a htmlFor="/registration.html">sign up here</a></p>
-
-
-
-
-		</form>
-
-	
-
-
-
-
 </div>
-</Fragment>
+
+
+      {auth._id ? (
+        <Links>
+          {auth.isAdmin ? (
+            <div>
+              <Link to="/admin/summary">Admin</Link>
+            </div>
+          ) : null}
+          <div
+            onClick={() => {
+              dispatch(logoutUser(null));
+              toast.warning("Logged out!", { position: "bottom-left" });
+            }}
+          >
+            Logout
+          </div>
+        </Links>
+      ) : (
+        <AuthLinks>
+          <Link to="/login">Login</Link>
+          <Link to="register">Register</Link>
+        </AuthLinks>
+      )}
+
+      </Fragment>
+
   );
 }
 
 export default Header;
+
+const AuthLinks = styled.div`
+  a {
+    &:last-child {
+      margin-left: 2rem;
+    }
+  }
+`;
+
+const Links = styled.div`
+  color: white;
+  display: flex;
+
+  div {
+    cursor: pointer;
+
+    &:last-child {
+      margin-left: 2rem;
+    }
+  }
+`;

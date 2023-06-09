@@ -4,6 +4,9 @@ import { addToCart } from "../features/cartSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
 
 const Products = () => {
+  const auth = useSelector((state) => state.auth);
+
+  console.log(auth);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

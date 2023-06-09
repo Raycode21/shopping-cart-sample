@@ -10,12 +10,10 @@ import JSON from './db.json';
 import Header from './components/Header';
 import Products from './components/Products';
 import Cart from './components/Cart';
-
-
-
+import Register from './components/Register';
+import Login from './components/Login';
 
 class App extends Component  {
-
 
   state = {
     bakedProducts:JSON 
@@ -28,6 +26,8 @@ class App extends Component  {
       <ToastContainer/>
       <Header />
       <Routes>
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/Register" element={<Register/>}/>
         <Route path="/Cart" element={<Cart/>}/>
         <Route path="/" exact element={<Products/>}/>
       </Routes>
